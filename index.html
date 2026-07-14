@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResumeForge — AI-Powered Resume Builder</title>
+    <meta name="description" content="Create stunning, professional resumes in minutes with ResumeForge. Choose from premium templates, customize with live preview, and export to PDF instantly.">
+    <meta name="keywords" content="resume builder, CV maker, professional resume, AI resume, template">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/resume-templates.css">
+    <link rel="stylesheet" href="css/ai-wizard.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>">
+</head>
+<body>
+    <div id="app">
+        <div id="loader-screen" class="loader-screen">
+            <div class="loader-content">
+                <div class="loader-icon">
+                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                        <rect x="10" y="5" width="40" height="50" rx="4" stroke="url(#loaderGrad)" stroke-width="2.5" fill="none"/>
+                        <line x1="18" y1="18" x2="42" y2="18" stroke="url(#loaderGrad)" stroke-width="2" stroke-linecap="round" class="loader-line l1"/>
+                        <line x1="18" y1="26" x2="38" y2="26" stroke="url(#loaderGrad)" stroke-width="2" stroke-linecap="round" class="loader-line l2"/>
+                        <line x1="18" y1="34" x2="35" y2="34" stroke="url(#loaderGrad)" stroke-width="2" stroke-linecap="round" class="loader-line l3"/>
+                        <line x1="18" y1="42" x2="30" y2="42" stroke="url(#loaderGrad)" stroke-width="2" stroke-linecap="round" class="loader-line l4"/>
+                        <defs>
+                            <linearGradient id="loaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#6C63FF"/>
+                                <stop offset="100%" stop-color="#FF6B9D"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="loader-text">ResumeForge</div>
+                <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+            </div>
+        </div>
+        <div id="toast-container" class="toast-container"></div>
+        <div id="modal-root"></div>
+        <div id="page-content"></div>
+    </div>
+    <script src="js/utils/helpers.js"></script>
+    <script src="js/utils/storage.js"></script>
+    <script src="js/contexts/AuthContext.js"></script>
+    <script src="js/contexts/ResumeContext.js"></script>
+    <script src="js/contexts/UIContext.js"></script>
+    <script src="js/contexts/TemplateContext.js"></script>
+    <script src="js/components/common/Toast.js"></script>
+    <script src="js/components/common/Modal.js"></script>
+    <script src="js/components/common/Navbar.js"></script>
+    <script src="js/components/common/Sidebar.js"></script>
+    <script src="js/components/common/Footer.js"></script>
+    <script src="js/components/resume/TemplateCard.js"></script>
+    <script src="js/components/resume/ResumeTemplates.js"></script>
+    <script src="js/pages/LandingPage.js"></script>
+    <script src="js/pages/AuthPage.js"></script>
+    <script src="js/pages/Dashboard.js"></script>
+    <script src="js/pages/ResumeBuilder.js"></script>
+    <script src="js/pages/AiWizard.js"></script>
+    <script src="js/pages/PreviewPage.js"></script>
+    <script src="js/pages/DownloadPage.js"></script>
+    <script src="js/pages/MyResumes.js"></script>
+    <script src="js/pages/ProfileSettings.js"></script>
+    <script src="js/pages/NotFoundPage.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

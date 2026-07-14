@@ -1,0 +1,327 @@
+/* ==========================================================================
+   AI Resume Wizard Styles (Sleek Glassmorphic Dark Theme)
+   ========================================================================== */
+
+.wizard-layout {
+  max-width: 850px;
+  margin: var(--space-12) auto;
+  padding: 0 var(--space-4);
+  position: relative;
+}
+
+/* Progress Tracker */
+.wizard-tracker {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-bottom: var(--space-10);
+  padding: 0 var(--space-2);
+}
+
+.wizard-progress-bar-bg {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 2px;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.wizard-progress-bar-fill {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+  transform: translateY(-50%);
+  z-index: 2;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 0%;
+}
+
+.wizard-tracker-step {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.wizard-step-node {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.wizard-tracker-step.active .wizard-step-node {
+  background: var(--bg-primary);
+  border-color: #6C63FF;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(108, 99, 255, 0.4);
+}
+
+.wizard-tracker-step.completed .wizard-step-node {
+  background: var(--gradient-primary);
+  border-color: transparent;
+  color: #fff;
+}
+
+.wizard-step-label {
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.wizard-tracker-step.active .wizard-step-label {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Card Shell */
+.wizard-card {
+  background: var(--bg-secondary);
+  border: var(--glass-border);
+  border-radius: 20px;
+  padding: var(--space-10);
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.wizard-card-header {
+  margin-bottom: var(--space-8);
+  text-align: center;
+}
+
+.wizard-card-header h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: var(--space-2);
+}
+
+.wizard-card-header p {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+}
+
+/* Stage Selector Grid */
+.stage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.stage-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: var(--space-6);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stage-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(108, 99, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(108, 99, 255, 0.08);
+}
+
+.stage-card.selected {
+  background: rgba(108, 99, 255, 0.08);
+  border-color: #6C63FF;
+  box-shadow: 0 0 25px rgba(108, 99, 255, 0.15);
+}
+
+.stage-card-icon {
+  font-size: 32px;
+  margin-bottom: var(--space-4);
+  background: rgba(255, 255, 255, 0.04);
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.stage-card.selected .stage-card-icon {
+  background: rgba(108, 99, 255, 0.2);
+}
+
+.stage-card h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: var(--text-base);
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+  color: var(--text-primary);
+}
+
+.stage-card p {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Form Styles */
+.wizard-form-step {
+  animation: wizardFadeIn 0.4s ease;
+}
+
+@keyframes wizardFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.wizard-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--space-8);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: var(--space-6);
+}
+
+/* Loading Panel */
+.wizard-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-12) 0;
+  text-align: center;
+}
+
+.loader-glow-spinner {
+  width: 80px;
+  height: 80px;
+  border: 4px solid rgba(255, 255, 255, 0.05);
+  border-top: 4px solid #6C63FF;
+  border-bottom: 4px solid #FF6B9D;
+  border-radius: 50%;
+  animation: spinGlow 1.5s linear infinite;
+  margin-bottom: var(--space-8);
+  position: relative;
+  box-shadow: 0 0 20px rgba(108, 99, 255, 0.2);
+}
+
+@keyframes spinGlow {
+  0% { transform: rotate(0deg); box-shadow: 0 0 15px rgba(108, 99, 255, 0.2); }
+  50% { box-shadow: 0 0 25px rgba(255, 107, 157, 0.4); }
+  100% { transform: rotate(360deg); box-shadow: 0 0 15px rgba(108, 99, 255, 0.2); }
+}
+
+.loading-text-status {
+  font-family: 'Outfit', sans-serif;
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+  min-height: 28px;
+}
+
+.loading-subtext {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+}
+
+/* Choice card dialog on Dashboard */
+.wizard-choice-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-4) 0;
+}
+
+.wizard-choice-option {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: var(--space-5);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: rgba(255, 255, 255, 0.01);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.wizard-choice-option:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(108, 99, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.wizard-choice-option.recommended {
+  border-color: rgba(108, 99, 255, 0.4);
+  background: rgba(108, 99, 255, 0.02);
+}
+
+.wizard-choice-option.recommended:hover {
+  background: rgba(108, 99, 255, 0.06);
+  border-color: #6C63FF;
+}
+
+.wizard-choice-icon {
+  font-size: 28px;
+  background: rgba(255, 255, 255, 0.04);
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.wizard-choice-option.recommended .wizard-choice-icon {
+  background: rgba(108, 99, 255, 0.15);
+  color: #6C63FF;
+}
+
+.wizard-choice-text h4 {
+  font-size: var(--text-base);
+  font-weight: 700;
+  margin-bottom: var(--space-1);
+}
+
+.wizard-choice-text p {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.badge-recommended {
+  display: inline-block;
+  background: var(--gradient-primary);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  margin-left: var(--space-2);
+  vertical-align: middle;
+}
